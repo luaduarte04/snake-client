@@ -19,12 +19,7 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: LUA');
   });
-
-  // conn.on('connect', () => {
-  //   setTimeout(() => {
-  //     conn.write('Move: up');
-  //   }, 1000)
-  // });
+  return conn;
 }
 
-module.exports.connect = connect;
+module.exports = {connect};
