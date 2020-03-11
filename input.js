@@ -8,11 +8,13 @@ let connection;
 const setupInput = function(conn) {
   // Stores the active TCP connection object.
   connection = conn;
-  
+
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
+
+  conn.write('Say: Hey');
 
   //  callback handler for stdin
   const handleUserInput = function() {
