@@ -15,6 +15,10 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
+
+  conn.on('connect', (data) => {
+    conn.write('Name: LUA', data);
+  });
 }
 
 module.exports.connect = connect;
